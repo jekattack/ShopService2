@@ -12,6 +12,11 @@ public class ProductRepo {
 
     private HashMap<String, Product> products = new HashMap<>();
 
+    public void create(String name){
+        Product product = new Product(name);
+        products.putIfAbsent(product.getId(), product);
+    }
+
     public ProductRepo(List<Product> products){
         for(Product p : products) this.products.putIfAbsent(p.getId(), p);
     }
@@ -26,3 +31,5 @@ public class ProductRepo {
     }
 
 }
+
+

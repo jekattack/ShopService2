@@ -16,6 +16,10 @@ public class ShopService {
     private final ProductRepo productRepo;
     private final OrderRepo orderRepo;
 
+    public void createProduct(String name){
+        productRepo.create(name);
+    }
+
     public Product getProduct(String id){
         return productRepo.get(id).get();
     }
